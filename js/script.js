@@ -58,7 +58,7 @@ const getHumanChoice = () => {
     // console.log(humanChoice);
     isValid = false
     do {
-        let rawHumanChoice = prompt("Masukan Pilihan Anda");
+        let rawHumanChoice = prompt("Type Your Choice");
         let humanChoice = rawHumanChoice.toLowerCase()
         if (humanChoice == "paper" || humanChoice == "rock" || humanChoice == "scissors") {
             isValid = true;
@@ -101,23 +101,23 @@ const playRound = (humanChoice, computerChoice) => {
     let computerSelection = computerChoice;
 
     if ((humanSelection == "rock" && computerSelection == "paper") || (humanSelection == "paper" && computerSelection == "scissors") || (humanSelection == "scissors" && computerSelection == "rock")) {
-        console.log(`pilihan user: ${humanSelection}`);
-        console.log(`pilihan komputer: ${computerSelection}`);
-        console.log("Komputer Menang");
+        console.log(`User Choice: ${humanSelection}`);
+        console.log(`Computer Choice: ${computerSelection}`);
+        console.log("Computer Win");
         computerScore = computerScore + 1;
     } else if ((humanSelection == "paper" && computerSelection == "rock") || (humanSelection == "scissors" && computerSelection == "paper") || (humanSelection == "rock" && computerSelection == "scissors")) {
-        console.log(`pilihan user: ${humanSelection}`);
-        console.log(`pilihan komputer: ${computerSelection}`);
-        console.log("User Menang");
+        console.log(`User Choice: ${humanSelection}`);
+        console.log(`Computer Choice: ${computerSelection}`);
+        console.log("User Win");
         humanScore = humanScore+1;
     } else {
-        console.log(`pilihan user: ${humanSelection}`);
-        console.log(`pilihan komputer: ${computerSelection}`);
-        console.log("Seri");
+        console.log(`User Choice: ${humanSelection}`);
+        console.log(`Computer Choice: ${computerSelection}`);
+        console.log("Draw");
     }
 
-    console.log(`score User : ${humanScore}`);
-    console.log(`score komputer : ${computerScore}`);
+    console.log(`User Score : ${humanScore}`);
+    console.log(`Computer Score : ${computerScore}`);
     
     
 }
@@ -127,17 +127,17 @@ const playGame = () => {
         isValid = false;
         let finalHumanChoice = "";
         do {
-            let rawHumanChoice = prompt("Masukan Pilihan Anda");
+            let rawHumanChoice = prompt("Type Your Choice");
             let humanChoice = rawHumanChoice.toLowerCase()
             if (humanChoice == "paper" || humanChoice == "rock" || humanChoice == "scissors") {
                 isValid = true;
                 finalHumanChoice = humanChoice
                 // return humanChoice;
             }
-            alert("perhatikan input anda");
+            alert("Please Pay Attention to Your Input (Valid Input : Rock/Paper/Scissors (case insensitive))");
         } while (!isValid);
         playRound(finalHumanChoice, getComputerChoice());
-        console.log(`Permainan ke : ${i}`);
+        console.log(`Round : ${i}`);
     }
 }
 
